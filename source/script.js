@@ -4,8 +4,14 @@
    - Mobile menu
    - Footer year
    - Contact form -> WhatsApp
-   - Right-click & basic dev-shortcut protection (soft deterrent)
    ============================================================ */
+
+/* ---------- Contact constants ----------
+   Single source of truth for the WhatsApp number.
+   Any anchor with data-role="whatsapp-link" is rewritten on
+   DOMContentLoaded to point at https://wa.me/<WHATSAPP_NUMBER>.
+   Update this one constant when the number changes. */
+const WHATSAPP_NUMBER = '393518579386';
 
 /* ---------- Translations ---------- */
 const translations = {
@@ -64,7 +70,7 @@ const translations = {
     "about.stat2": "Aree di competenza",
     "about.stat3": "Servizio personalizzato",
     "about.stat4": "Risposta rapida",
-    "about.why.title": "Perché sceglier­mi",
+    "about.why.title": "Perché scegliermi",
     "about.why.li1": "Preventivi chiari e gratuiti, senza sorprese",
     "about.why.li2": "Interventi rapidi e puntuali",
     "about.why.li3": "Soluzioni su misura, non pacchetti standard",
@@ -95,6 +101,7 @@ const translations = {
     "footer.tagline": "Servizi IT in Sicilia e in tutta Italia",
     "footer.built": "Fatto con",
     "footer.builtBy": "da",
+    "nf.metaTitle": "Pagina non trovata — Eolietech",
     "nf.title": "Pagina non trovata",
     "nf.lead": "Spiacente, la pagina che stai cercando non esiste o è stata spostata.",
     "nf.cta.home": "Torna alla home"
@@ -185,6 +192,7 @@ const translations = {
     "footer.tagline": "IT services in Sicily and across Italy",
     "footer.built": "Made with",
     "footer.builtBy": "by",
+    "nf.metaTitle": "Page not found — Eolietech",
     "nf.title": "Page not found",
     "nf.lead": "Sorry, the page you're looking for doesn't exist or has been moved.",
     "nf.cta.home": "Back to home"
@@ -242,56 +250,19 @@ function sendForm(e) {
       `Resto in attesa di una tua risposta. Grazie!`;
   }
 
-  const url = `https://wa.me/393518579386?text=${encodeURIComponent(intro)}`;
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(intro)}`;
   window.open(url, '_blank');
   return false;
 }
 
-/* ---------- Right-click & dev-shortcut protection ----------
-   NOTE: This is only a soft deterrent for casual users.
-   It does NOT prevent a determined visitor from viewing the
-   source code (they can disable JavaScript, use "view-source:"
-   prefix in the URL, or use curl/wget). It just discourages
-   right-click "Save image as", "View page source", etc.
-   ----------------------------------------------------------- */
-document.addEventListener('contextmenu', function (e) {
-  e.preventDefault();
-  return false;
-});
-
-document.addEventListener('keydown', function (e) {
-  // F12 — DevTools
-  if (e.key === 'F12') {
-    e.preventDefault();
-    return false;
-  }
-  // Ctrl+U — View source
-  if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
-    e.preventDefault();
-    return false;
-  }
-  // Ctrl+S — Save page
-  if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {
-    e.preventDefault();
-    return false;
-  }
-  // Ctrl+Shift+I / J / C — DevTools / Console / Inspector
-  if (e.ctrlKey && e.shiftKey && ['I', 'J', 'C', 'i', 'j', 'c'].includes(e.key)) {
-    e.preventDefault();
-    return false;
-  }
-});
-
-// Disable image dragging (so visitors can't drag images out of the page)
-document.addEventListener('dragstart', function (e) {
-  if (e.target.tagName === 'IMG') {
-    e.preventDefault();
-    return false;
-  }
-});
-
 /* ---------- Init on page ready ---------- */
 document.addEventListener('DOMContentLoaded', function () {
+  // Wire every WhatsApp link to the single number constant.
+  // Anchors carry a plain href as fallback for no-JS users; JS overrides it.
+  document.querySelectorAll('a[data-role="whatsapp-link"]').forEach(a => {
+    a.setAttribute('href', `https://wa.me/${WHATSAPP_NUMBER}`);
+  });
+
   // Language buttons
   document.querySelectorAll('.lang-toggle button').forEach(btn => {
     btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
