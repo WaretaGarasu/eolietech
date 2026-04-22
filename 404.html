@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <meta name="theme-color" content="#2563eb" />
+        <meta name="color-scheme" content="light" />
+        <meta name="robots" content="noindex, follow" />
+
+        <title data-i18n="nf.title">Pagina non trovata — Eolietech</title>
+        <meta
+            name="description"
+            content="La pagina richiesta non è stata trovata su eolietech.com."
+        />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="source/img/favicon.svg" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="source/img/favicon-32.png"
+        />
+        <link rel="shortcut icon" href="source/img/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="source/img/apple-touch-icon.png"
+        />
+        <link rel="manifest" href="source/site.webmanifest" />
+
+        <link rel="stylesheet" href="source/style.css" />
+    </head>
+    <body>
+        <header>
+            <div class="container nav">
+                <a href="/" class="brand">
+                    <span class="brand-mark">E</span>
+                    <span data-i18n="brand.name">Eolietech</span>
+                </a>
+                <nav class="nav-links" id="navLinks">
+                    <a href="/#services" data-i18n="nav.services">Servizi</a>
+                    <a href="/#about" data-i18n="nav.about">Chi sono</a>
+                    <a href="/#contact" data-i18n="nav.contact">Contatti</a>
+                    <div class="lang-toggle" role="group" aria-label="Language">
+                        <button data-lang="it" class="active">IT</button>
+                        <button data-lang="en">EN</button>
+                    </div>
+                </nav>
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Menu"
+                    aria-expanded="false"
+                    aria-controls="navLinks"
+                >
+                    ☰
+                </button>
+            </div>
+        </header>
+
+        <section class="notfound">
+            <div class="container">
+                <div class="code" aria-hidden="true">404</div>
+                <h1 data-i18n="nf.title">Pagina non trovata</h1>
+                <p class="lead" data-i18n="nf.lead">
+                    Spiacente, la pagina che stai cercando non esiste o è stata
+                    spostata.
+                </p>
+                <div class="hero-actions">
+                    <a
+                        href="/"
+                        class="btn btn-primary"
+                        data-i18n="nf.cta.home"
+                        >Torna alla home</a
+                    >
+                    <a
+                        href="https://wa.me/393518579386"
+                        class="btn btn-whatsapp"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                        >
+                            <path
+                                d="M17.6 6.3A7.85 7.85 0 0 0 12 4a7.94 7.94 0 0 0-6.8 12l-1 3.7 3.8-1A7.94 7.94 0 0 0 12 19.9a7.94 7.94 0 0 0 5.6-13.6Zm-5.6 12.2a6.6 6.6 0 0 1-3.4-.9l-.2-.1-2.2.6.6-2.2-.2-.2A6.62 6.62 0 1 1 12 18.5Zm3.6-4.9c-.2-.1-1.2-.6-1.4-.6-.2-.1-.3-.1-.5.1l-.7.8c-.1.2-.3.2-.5.1a5.4 5.4 0 0 1-2.7-2.4c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.6-1.4c-.1-.4-.3-.3-.4-.3h-.4a.7.7 0 0 0-.5.2 2.2 2.2 0 0 0-.7 1.6 3.8 3.8 0 0 0 .8 2 8.5 8.5 0 0 0 3.3 2.9c.5.2.8.3 1.1.4a2.6 2.6 0 0 0 1.2.1 2 2 0 0 0 1.3-.9 1.6 1.6 0 0 0 .1-.9c0-.1-.2-.2-.4-.2Z"
+                            />
+                        </svg>
+                        <span data-i18n="hero.cta1">Scrivimi su WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container footer-content">
+                <div>
+                    © <span id="year"></span>
+                    <span data-i18n="brand.name">Eolietech</span> —
+                    <span data-i18n="footer.tagline"
+                        >Servizi IT in Sicilia e in tutta Italia</span
+                    >
+                </div>
+                <div class="footer-signature">
+                    <span data-i18n="footer.built">Fatto con</span>
+                    <span class="heart" aria-hidden="true">❤️</span>
+                    <span data-i18n="footer.builtBy">da</span>
+                    <strong class="signature">WaretaGarasu</strong>
+                </div>
+            </div>
+        </footer>
+
+        <script src="source/script.js"></script>
+    </body>
+</html>
