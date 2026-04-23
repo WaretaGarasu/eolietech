@@ -104,7 +104,8 @@ const translations = {
     "nf.metaTitle": "Pagina non trovata — Eolietech",
     "nf.title": "Pagina non trovata",
     "nf.lead": "Spiacente, la pagina che stai cercando non esiste o è stata spostata.",
-    "nf.cta.home": "Torna alla home"
+    "nf.cta.home": "Torna alla home",
+    "nav.scrollTop": "Torna su"
   },
   en: {
     "brand.name": "Eolietech",
@@ -195,7 +196,8 @@ const translations = {
     "nf.metaTitle": "Page not found — Eolietech",
     "nf.title": "Page not found",
     "nf.lead": "Sorry, the page you're looking for doesn't exist or has been moved.",
-    "nf.cta.home": "Back to home"
+    "nf.cta.home": "Back to home",
+    "nav.scrollTop": "Back to top"
   }
 };
 
@@ -215,6 +217,13 @@ function setLanguage(lang) {
     } else {
       el.textContent = value;
     }
+  });
+
+  // Translatable aria-labels (e.g. scroll-to-top button)
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+    const key = el.getAttribute('data-i18n-aria');
+    const value = translations[lang][key];
+    if (value) el.setAttribute('aria-label', value);
   });
 
   document.querySelectorAll('.lang-toggle button').forEach(btn => {
@@ -307,6 +316,21 @@ document.addEventListener('DOMContentLoaded', function () {
     // Close on Escape
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && navLinks.classList.contains('open')) closeMenu();
+    });
+  }
+
+  // Scroll-to-top button — show after threshold, smooth-scroll on click
+  const scrollTopBtn = document.getElementById('scrollTop');
+  if (scrollTopBtn) {
+    const threshold = 400;
+    const toggleScrollBtn = () => {
+      if (window.scrollY > threshold) scrollTopBtn.classList.add('visible');
+      else scrollTopBtn.classList.remove('visible');
+    };
+    toggleScrollBtn();
+    window.addEventListener('scroll', toggleScrollBtn, { passive: true });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
