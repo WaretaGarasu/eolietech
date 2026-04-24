@@ -334,6 +334,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Brand link — smooth-scroll to top when already on the home page
+  const brandLink = document.querySelector('.brand');
+  if (brandLink) {
+    brandLink.addEventListener('click', (e) => {
+      const path = window.location.pathname;
+      if (path === '/' || path.endsWith('/index.html')) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  }
+
   // Footer year
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
