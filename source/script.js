@@ -22,6 +22,8 @@ const translations = {
     "nav.services": "Servizi",
     "nav.about": "Chi sono",
     "nav.contact": "Contatti",
+    "nav.themeToggle": "Passa al tema scuro",
+    "nav.themeToggleLight": "Passa al tema chiaro",
     "hero.title1": "Soluzioni IT affidabili per",
     "hero.title2": "casa e impresa",
     "hero.lead": "Installazione di sistemi di videosorveglianza, riparazione PC e sviluppo di siti web professionali. Servizio rapido, professionale e personalizzato.",
@@ -114,6 +116,8 @@ const translations = {
     "nav.services": "Services",
     "nav.about": "About",
     "nav.contact": "Contact",
+    "nav.themeToggle": "Switch to dark theme",
+    "nav.themeToggleLight": "Switch to light theme",
     "hero.title1": "Reliable IT solutions for",
     "hero.title2": "home and business",
     "hero.lead": "CCTV installation, PC repair and professional web development. Fast, reliable, and tailored to you.",
@@ -226,11 +230,74 @@ function setLanguage(lang) {
     if (value) el.setAttribute('aria-label', value);
   });
 
+  // Generic attribute translations: data-i18n-attr="attrName:translation.key"
+  document.querySelectorAll('[data-i18n-attr]').forEach(el => {
+    const pairs = (el.getAttribute('data-i18n-attr') || '')
+      .split(',')
+      .map(part => part.trim())
+      .filter(Boolean);
+    pairs.forEach(pair => {
+      const sepIndex = pair.indexOf(':');
+      if (sepIndex < 1) return;
+      const attrName = pair.slice(0, sepIndex).trim();
+      const key = pair.slice(sepIndex + 1).trim();
+      const value = translations[lang][key];
+      if (attrName && value) el.setAttribute(attrName, value);
+    });
+  });
+
   document.querySelectorAll('.lang-toggle button').forEach(btn => {
     btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
   });
+  document.querySelectorAll('.lang-toggle').forEach(toggle => {
+    toggle.setAttribute('data-active-lang', lang);
+  });
 
   try { localStorage.setItem('lang', lang); } catch (e) {}
+
+  // Keep theme toggle label consistent with current theme and language
+  applyTheme(document.documentElement.getAttribute('data-theme') || resolvedTheme());
+}
+
+const VALID_THEMES = ['light', 'dark'];
+
+function getStoredTheme() {
+  try {
+    const stored = localStorage.getItem('theme');
+    return VALID_THEMES.includes(stored) ? stored : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+function resolvedTheme() {
+  const stored = getStoredTheme();
+  if (stored) return stored;
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light';
+}
+
+function applyTheme(theme) {
+  const safeTheme = VALID_THEMES.includes(theme) ? theme : 'light';
+  const root = document.documentElement;
+  root.setAttribute('data-theme', safeTheme);
+  const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
+  if (colorSchemeMeta) {
+    colorSchemeMeta.setAttribute('content', safeTheme === 'dark' ? 'dark light' : 'light dark');
+  }
+  const toggle = document.getElementById('themeToggle');
+  if (toggle) {
+    const isDark = safeTheme === 'dark';
+    toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+    const lang = root.lang && translations[root.lang] ? root.lang : 'it';
+    const key = 'nav.themeToggle';
+    const lightKey = 'nav.themeToggleLight';
+    const label = isDark
+      ? (translations[lang][lightKey] || (lang === 'en' ? 'Switch to light theme' : 'Passa al tema chiaro'))
+      : (translations[lang][key] || (lang === 'en' ? 'Switch to dark theme' : 'Passa al tema scuro'));
+    toggle.setAttribute('aria-label', label);
+  }
 }
 
 /* ---------- Form -> WhatsApp ---------- */
@@ -271,6 +338,29 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('a[data-role="whatsapp-link"]').forEach(a => {
     a.setAttribute('href', `https://wa.me/${WHATSAPP_NUMBER}`);
   });
+
+  // Theme toggle (saved preference first, fallback to system)
+  const themeToggle = document.getElementById('themeToggle');
+  applyTheme(resolvedTheme());
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  }
+  if (window.matchMedia) {
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+    const syncWithSystem = (e) => {
+      if (!getStoredTheme()) applyTheme(e.matches ? 'dark' : 'light');
+    };
+    if (typeof media.addEventListener === 'function') {
+      media.addEventListener('change', syncWithSystem);
+    } else if (typeof media.addListener === 'function') {
+      media.addListener(syncWithSystem);
+    }
+  }
 
   // Language buttons
   document.querySelectorAll('.lang-toggle button').forEach(btn => {
