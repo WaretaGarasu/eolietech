@@ -89,8 +89,66 @@
                           ? "dark"
                           : "light";
                     document.documentElement.setAttribute("data-theme", theme);
+                    var themeMeta = document.querySelector(
+                        'meta[name="theme-color"]',
+                    );
+                    if (themeMeta) {
+                        themeMeta.setAttribute(
+                            "content",
+                            theme === "dark" ? "#050a16" : "#ffffff",
+                        );
+                    }
                 } catch (e) {}
             })();
+        </script>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "ProfessionalService",
+                "name": "Eolietech",
+                "url": "https://eolietech.com/",
+                "inLanguage": "it-IT",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://eolietech.com/"
+                },
+                "logo": "https://eolietech.com/source/img/icon-512.png",
+                "image": "https://eolietech.com/source/img/icon-512.png",
+                "telephone": "+39 351 857 9386",
+                "email": "info@eolietech.com",
+                "priceRange": "\u20ac\u20ac",
+                "founder": {
+                    "@type": "Person",
+                    "name": "Francesco"
+                },
+                "areaServed": [
+                    {
+                        "@type": "Place",
+                        "name": "Lipari"
+                    },
+                    {
+                        "@type": "Place",
+                        "name": "Vulcano"
+                    },
+                    {
+                        "@type": "Place",
+                        "name": "Messina"
+                    },
+                    {
+                        "@type": "Place",
+                        "name": "Sicily"
+                    },
+                    {
+                        "@type": "Country",
+                        "name": "Italy"
+                    }
+                ],
+                "serviceType": [
+                    "Videosorveglianza CCTV",
+                    "Riparazione PC",
+                    "Sviluppo siti web"
+                ]
+            }
         </script>
         <link rel="stylesheet" href="/source/style.min.css" />
     </head>

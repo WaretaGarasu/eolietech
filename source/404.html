@@ -54,6 +54,15 @@
                           ? "dark"
                           : "light";
                     document.documentElement.setAttribute("data-theme", theme);
+                    var themeMeta = document.querySelector(
+                        'meta[name="theme-color"]',
+                    );
+                    if (themeMeta) {
+                        themeMeta.setAttribute(
+                            "content",
+                            theme === "dark" ? "#050a16" : "#ffffff",
+                        );
+                    }
                 } catch (e) {}
             })();
         </script>

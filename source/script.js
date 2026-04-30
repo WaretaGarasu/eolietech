@@ -286,6 +286,10 @@ function applyTheme(theme) {
   if (colorSchemeMeta) {
     colorSchemeMeta.setAttribute('content', safeTheme === 'dark' ? 'dark light' : 'light dark');
   }
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+  if (themeColorMeta) {
+    themeColorMeta.setAttribute('content', safeTheme === 'dark' ? '#050a16' : '#ffffff');
+  }
   const toggle = document.getElementById('themeToggle');
   if (toggle) {
     const isDark = safeTheme === 'dark';
