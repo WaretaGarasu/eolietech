@@ -162,4 +162,46 @@ if total_before:
 PY
 fi
 
+# -----------------------------------------------------------------------------
+# Sitemap  — regenerate from built HTML outputs.
+# Includes homepage + built project pages, excludes 404.
+# -----------------------------------------------------------------------------
+echo "→ Regenerating sitemap.xml"
+SITE_BASE_URL="${SITE_BASE_URL:-https://eolietech.com}"
+SITE_BASE_URL="${SITE_BASE_URL%/}"
+SITE_BASE_URL="$SITE_BASE_URL" python3 - <<'PY'
+from pathlib import Path
+from datetime import datetime, timezone
+import os
+
+base_url = os.environ.get("SITE_BASE_URL", "https://eolietech.com").rstrip("/")
+
+targets = [Path("index.html")]
+targets.extend(sorted(Path("projects").glob("*.html")))
+
+entries = []
+for path in targets:
+    if not path.exists():
+        continue
+    rel = path.as_posix()
+    if rel == "404.html":
+        continue
+    loc = f"{base_url}/" if rel == "index.html" else f"{base_url}/{rel}"
+    lastmod = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc).date().isoformat()
+    entries.append((loc, lastmod))
+
+xml_lines = ['<?xml version="1.0" encoding="UTF-8"?>']
+xml_lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+for loc, lastmod in entries:
+    xml_lines.append("  <url>")
+    xml_lines.append(f"    <loc>{loc}</loc>")
+    xml_lines.append(f"    <lastmod>{lastmod}</lastmod>")
+    xml_lines.append("  </url>")
+xml_lines.append("</urlset>")
+xml_lines.append("")
+
+Path("sitemap.xml").write_text("\n".join(xml_lines), encoding="utf-8")
+print(f"  Wrote sitemap.xml with {len(entries)} URL(s)")
+PY
+
 echo "✔ Build complete"

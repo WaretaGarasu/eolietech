@@ -308,10 +308,21 @@ function applyTheme(theme) {
 function sendForm(e) {
   e.preventDefault();
   const lang = document.documentElement.lang || 'it';
+  const form = e.currentTarget;
+  const feedbackEl = document.getElementById('contactFormFeedback');
+  const submitBtn = form ? form.querySelector('button[type="submit"]') : null;
   const name = document.getElementById('name').value.trim();
   const serviceSelect = document.getElementById('service');
   const serviceLabel = serviceSelect.options[serviceSelect.selectedIndex].text;
   const message = document.getElementById('message').value.trim();
+  if (!name || !message || !serviceSelect.value) {
+    if (feedbackEl) {
+      feedbackEl.textContent = lang === 'en'
+        ? 'Please complete all required fields before sending.'
+        : 'Compila tutti i campi obbligatori prima di inviare.';
+    }
+    return false;
+  }
 
   let intro;
   if (lang === 'en') {
@@ -331,7 +342,16 @@ function sendForm(e) {
   }
 
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(intro)}`;
+  if (feedbackEl) {
+    feedbackEl.textContent = lang === 'en'
+      ? 'Opening WhatsApp in a new tab...'
+      : 'Apro WhatsApp in una nuova scheda...';
+  }
+  if (submitBtn) submitBtn.disabled = true;
   window.open(url, '_blank');
+  if (submitBtn) {
+    setTimeout(() => { submitBtn.disabled = false; }, 600);
+  }
   return false;
 }
 
