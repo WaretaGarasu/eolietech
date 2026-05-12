@@ -15,40 +15,63 @@
         <meta name="apple-mobile-web-app-title" content="Eolietech" />
 
         <link rel="canonical" href="https://eolietech.com/" />
+        <link rel="alternate" hreflang="it" href="https://eolietech.com/?lang=it" />
+        <link rel="alternate" hreflang="en" href="https://eolietech.com/?lang=en" />
+        <link rel="alternate" hreflang="x-default" href="https://eolietech.com/" />
 
         <!-- Open Graph / social previews -->
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://eolietech.com/" />
         <meta property="og:site_name" content="eolietech.com" />
-        <meta property="og:title" content="Eolietech — Servizi IT" />
+        <meta
+            property="og:title"
+            data-i18n="meta.ogTitle"
+            content="Eolietech — Servizi IT per le Isole Eolie e la Sicilia"
+        />
         <meta
             property="og:description"
-            content="Videosorveglianza, riparazione PC e sviluppo siti web nelle Isole Eolie, a Messina e in tutta Italia."
+            data-i18n="meta.ogDescription"
+            content="Videosorveglianza CCTV, riparazione PC, assemblaggio custom, domotica, reti Wi-Fi e sviluppo siti web nelle Isole Eolie, Messina e tutta Italia."
         />
         <meta
             property="og:image"
-            content="https://eolietech.com/source/img/icon-512.png"
+            content="https://eolietech.com/source/img/og-image.svg"
         />
-        <meta property="og:locale" content="it_IT" />
-        <meta property="og:locale:alternate" content="en_US" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Eolietech — Servizi IT" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+            property="og:locale"
+            data-i18n="meta.ogLocale"
+            content="it_IT"
+        />
+        <meta
+            property="og:locale:alternate"
+            data-i18n="meta.ogLocaleAlt"
+            content="en_US"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            data-i18n="meta.twitterTitle"
+            content="Eolietech — Servizi IT"
+        />
         <meta
             name="twitter:description"
-            content="CCTV, riparazione PC e sviluppo siti web nelle Isole Eolie, a Messina e in tutta Italia."
+            data-i18n="meta.twitterDescription"
+            content="CCTV, riparazione PC, assemblaggio custom, domotica, reti Wi-Fi e sviluppo siti web nelle Isole Eolie, a Messina e in tutta Italia."
         />
         <meta
             name="twitter:image"
-            content="https://eolietech.com/source/img/icon-512.png"
+            content="https://eolietech.com/source/img/og-image.svg"
         />
 
         <title data-i18n="meta.title">
-            Eolietech — CCTV, Riparazione PC e Siti Web
+            Eolietech — Servizi IT a Lipari, Messina e online
         </title>
         <meta
             name="description"
             data-i18n="meta.description"
-            content="Servizi professionali di videosorveglianza, riparazione PC e sviluppo siti web nelle Isole Eolie, a Messina e in tutta Italia."
+            content="Tecnico IT per Lipari, Isole Eolie e Messina: videosorveglianza CCTV, riparazione PC, assemblaggio custom, domotica, reti Wi-Fi e siti web."
         />
 
         <!-- Self-hosted Inter (variable woff2, Latin subset) — preloaded for early fetch -->
@@ -62,18 +85,6 @@
 
         <!-- Favicon -->
         <link rel="icon" type="image/svg+xml" href="/source/img/favicon.svg" />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/source/img/favicon-32.png"
-        />
-        <link rel="shortcut icon" href="/source/img/favicon.ico" />
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/source/img/apple-touch-icon.png"
-        />
         <link rel="manifest" href="/source/site.webmanifest" />
 
         <script>
@@ -101,51 +112,75 @@
                 } catch (e) {}
             })();
         </script>
+
+        <!-- ProfessionalService schema -->
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "ProfessionalService",
+                "@id": "https://eolietech.com/#business",
                 "name": "Eolietech",
+                "description": "Tecnico IT per Lipari, Isole Eolie e Messina: videosorveglianza CCTV, riparazione PC, assemblaggio custom, domotica, reti Wi-Fi e sviluppo siti web.",
                 "url": "https://eolietech.com/",
                 "inLanguage": "it-IT",
                 "mainEntityOfPage": {
                     "@type": "WebPage",
                     "@id": "https://eolietech.com/"
                 },
-                "logo": "https://eolietech.com/source/img/icon-512.png",
-                "image": "https://eolietech.com/source/img/icon-512.png",
+                "logo": "https://eolietech.com/source/img/favicon.svg",
+                "image": "https://eolietech.com/source/img/og-image.svg",
                 "telephone": "+39 351 857 9386",
                 "email": "info@eolietech.com",
-                "priceRange": "\u20ac\u20ac",
+                "hasMap": "https://maps.google.com/?q=38.4674,14.9530",
+                "priceRange": "€€",
+                "openingHoursSpecification": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": [
+                            "Monday",
+                            "Tuesday",
+                            "Wednesday",
+                            "Thursday",
+                            "Friday",
+                            "Saturday",
+                            "Sunday"
+                        ],
+                        "opens": "10:00",
+                        "closes": "19:00"
+                    }
+                ],
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Lipari",
+                    "addressRegion": "ME",
+                    "addressCountry": "IT"
+                },
                 "founder": {
                     "@type": "Person",
                     "name": "Francesco"
                 },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 38.4674,
+                    "longitude": 14.9530
+                },
+                "sameAs": [
+                    "https://t.me/candygoogy",
+                    "https://www.fiverr.com/waretagarasu/"
+                ],
                 "areaServed": [
-                    {
-                        "@type": "Place",
-                        "name": "Lipari"
-                    },
-                    {
-                        "@type": "Place",
-                        "name": "Vulcano"
-                    },
-                    {
-                        "@type": "Place",
-                        "name": "Messina"
-                    },
-                    {
-                        "@type": "Place",
-                        "name": "Sicily"
-                    },
-                    {
-                        "@type": "Country",
-                        "name": "Italy"
-                    }
+                    { "@type": "Place", "name": "Lipari" },
+                    { "@type": "Place", "name": "Vulcano" },
+                    { "@type": "Place", "name": "Messina" },
+                    { "@type": "Place", "name": "Sicily" },
+                    { "@type": "Country", "name": "Italy" }
                 ],
                 "serviceType": [
                     "Videosorveglianza CCTV",
                     "Riparazione PC",
+                    "Assemblaggio PC Custom e Gaming",
+                    "Domotica e Smart Home",
+                    "Reti Wi-Fi e Networking",
                     "Sviluppo siti web"
                 ],
                 "contactPoint": {
@@ -154,10 +189,182 @@
                     "email": "info@eolietech.com",
                     "contactType": "customer service",
                     "areaServed": "IT",
-                    "availableLanguage": ["it", "en"]
+                    "availableLanguage": ["it", "en", "fr"]
+                }
+            }
+        </script>
+
+        <!-- Service schemas -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "Service",
+                        "@id": "https://eolietech.com/#service-cctv",
+                        "name": "Videosorveglianza CCTV",
+                        "description": "Progettazione, installazione e configurazione di sistemi di telecamere per casa, negozi e aziende nelle Isole Eolie e a Messina.",
+                        "provider": { "@id": "https://eolietech.com/#business" },
+                        "areaServed": [
+                            { "@type": "Place", "name": "Lipari" },
+                            { "@type": "Place", "name": "Vulcano" },
+                            { "@type": "Place", "name": "Messina" }
+                        ],
+                        "serviceType": "CCTV Installation",
+                        "offers": {
+                            "@type": "Offer",
+                            "priceCurrency": "EUR",
+                            "description": "Sopralluogo gratuito e preventivo personalizzato in base a numero di telecamere, installazione e obiettivi."
+                        }
+                    },
+                    {
+                        "@type": "Service",
+                        "@id": "https://eolietech.com/#service-pc",
+                        "name": "Riparazione PC",
+                        "description": "Diagnostica hardware e software, rimozione virus, upgrade SSD/RAM, recupero dati per PC fissi, portatili e Mac.",
+                        "provider": { "@id": "https://eolietech.com/#business" },
+                        "areaServed": [
+                            { "@type": "Place", "name": "Lipari" },
+                            { "@type": "Place", "name": "Vulcano" },
+                            { "@type": "Place", "name": "Messina" }
+                        ],
+                        "serviceType": "Computer Repair",
+                        "offers": {
+                            "@type": "Offer",
+                            "priceCurrency": "EUR",
+                            "description": "Diagnosi gratuita e preventivo chiaro prima dell'intervento."
+                        }
+                    },
+                    {
+                        "@type": "Service",
+                        "@id": "https://eolietech.com/#service-custom-pc",
+                        "name": "Assemblaggio PC Custom e Gaming",
+                        "description": "Configurazione, assemblaggio e ottimizzazione di PC desktop su misura per gaming, studio, lavoro e creazione contenuti.",
+                        "provider": { "@id": "https://eolietech.com/#business" },
+                        "areaServed": [
+                            { "@type": "Place", "name": "Lipari" },
+                            { "@type": "Place", "name": "Vulcano" },
+                            { "@type": "Place", "name": "Messina" }
+                        ],
+                        "serviceType": "Custom Computer Assembly",
+                        "offers": {
+                            "@type": "Offer",
+                            "priceCurrency": "EUR",
+                            "description": "Consulenza componenti, assemblaggio e configurazione completa. Preventivo gratuito."
+                        }
+                    },
+                    {
+                        "@type": "Service",
+                        "@id": "https://eolietech.com/#service-smart-home",
+                        "name": "Domotica e Smart Home",
+                        "description": "Configurazione di dispositivi smart, automazioni, assistenti vocali, sensori, luci, sicurezza domestica e controllo da smartphone.",
+                        "provider": { "@id": "https://eolietech.com/#business" },
+                        "areaServed": [
+                            { "@type": "Place", "name": "Lipari" },
+                            { "@type": "Place", "name": "Vulcano" },
+                            { "@type": "Place", "name": "Messina" }
+                        ],
+                        "serviceType": "Smart Home Installation",
+                        "offers": {
+                            "@type": "Offer",
+                            "priceCurrency": "EUR",
+                            "description": "Configurazione e automazioni su misura. Preventivo gratuito."
+                        }
+                    },
+                    {
+                        "@type": "Service",
+                        "@id": "https://eolietech.com/#service-net",
+                        "name": "Reti Wi-Fi e Networking",
+                        "description": "Installazione e configurazione di reti domestiche e aziendali, router, access point, cablaggio strutturato e risoluzione problemi di connettività.",
+                        "provider": { "@id": "https://eolietech.com/#business" },
+                        "areaServed": [
+                            { "@type": "Place", "name": "Lipari" },
+                            { "@type": "Place", "name": "Vulcano" },
+                            { "@type": "Place", "name": "Messina" }
+                        ],
+                        "serviceType": "Network Installation",
+                        "offers": {
+                            "@type": "Offer",
+                            "priceCurrency": "EUR",
+                            "description": "Diagnosi gratuita e preventivo personalizzato in base a copertura, cablaggio e dispositivi necessari."
+                        }
+                    },
+                    {
+                        "@type": "Service",
+                        "@id": "https://eolietech.com/#service-web",
+                        "name": "Sviluppo Siti Web",
+                        "description": "Siti vetrina, e-commerce e portali aziendali mobile-first. SEO, Core Web Vitals, WordPress e sviluppo custom.",
+                        "provider": { "@id": "https://eolietech.com/#business" },
+                        "areaServed": { "@type": "Country", "name": "Italy" },
+                        "serviceType": "Web Development",
+                        "offers": {
+                            "@type": "Offer",
+                            "priceCurrency": "EUR",
+                            "description": "Preventivo gratuito e personalizzato in base a obiettivi, contenuti e funzionalità richieste."
+                        }
+                    }
                 ]
             }
         </script>
+
+        <!-- FAQPage schema -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Quanto costa un impianto di videosorveglianza?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Il costo dipende dal numero di telecamere, dal tipo di installazione e dalle funzioni richieste. Offro un sopralluogo gratuito e un preventivo personalizzato senza impegno prima di iniziare."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Fate riparazione PC a domicilio nelle Isole Eolie?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Sì, effettuo interventi a domicilio a Lipari, Vulcano e Messina. Per casi di urgenza sono disponibile anche nei weekend."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Quanto costa un sito web professionale?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Il prezzo dipende da obiettivi, numero di pagine, contenuti, lingue e funzionalità richieste. Ti preparo sempre un preventivo chiaro e gratuito prima di iniziare."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Offrite configurazione Wi-Fi e reti per case vacanza e B&B?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Assolutamente sì. È una delle richieste più frequenti nelle Isole Eolie, dove molte strutture ricettive hanno bisogno di copertura Wi-Fi affidabile. Gestisco installazione, configurazione rete ospiti, sicurezza e assistenza da remoto."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Lavorate anche a distanza per lo sviluppo web?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Sì, tutti i progetti web vengono gestiti completamente da remoto. Clienti da tutta Italia possono commissionare un sito senza doversi spostare."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Offrite assistenza per clienti stranieri nelle Isole Eolie?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Assolutamente sì. Parlo italiano, inglese e francese e lavoro con clienti di ogni nazionalità. Le Isole Eolie attraggono turisti e residenti stranieri e offro assistenza tecnica completa in tutte e tre le lingue."
+                        }
+                    }
+                ]
+            }
+        </script>
+
         <link rel="stylesheet" href="/source/style.min.css" />
     </head>
     <body>
@@ -186,6 +393,7 @@
                 </a>
                 <nav class="nav-links" id="navLinks">
                     <a href="#services" data-i18n="nav.services">Servizi</a>
+                    <a href="#faq" data-i18n="nav.faq">FAQ</a>
                     <a href="#about" data-i18n="nav.about">Chi sono</a>
                     <a href="#contact" data-i18n="nav.contact">Contatti</a>
                     <div class="nav-controls">
@@ -212,30 +420,10 @@
                                 <line x1="12" y1="19.5" x2="12" y2="22.5"></line>
                                 <line x1="1.5" y1="12" x2="4.5" y2="12"></line>
                                 <line x1="19.5" y1="12" x2="22.5" y2="12"></line>
-                                <line
-                                    x1="4.22"
-                                    y1="4.22"
-                                    x2="6.34"
-                                    y2="6.34"
-                                ></line>
-                                <line
-                                    x1="17.66"
-                                    y1="17.66"
-                                    x2="19.78"
-                                    y2="19.78"
-                                ></line>
-                                <line
-                                    x1="4.22"
-                                    y1="19.78"
-                                    x2="6.34"
-                                    y2="17.66"
-                                ></line>
-                                <line
-                                    x1="17.66"
-                                    y1="6.34"
-                                    x2="19.78"
-                                    y2="4.22"
-                                ></line>
+                                <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"></line>
+                                <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"></line>
+                                <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"></line>
+                                <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"></line>
                             </svg>
                             <svg
                                 class="theme-icon moon"
@@ -243,9 +431,7 @@
                                 aria-hidden="true"
                                 focusable="false"
                             >
-                                <path
-                                    d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79z"
-                                ></path>
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79z"></path>
                             </svg>
                         </button>
                     </div>
@@ -266,17 +452,13 @@
         <section class="hero">
             <div class="container">
                 <h1>
-                    <span data-i18n="hero.title1"
-                        >Soluzioni IT affidabili per</span
-                    >
-                    <span class="accent" data-i18n="hero.title2"
-                        >casa e impresa</span
-                    >
+                    <span data-i18n="hero.title1">Soluzioni IT affidabili per</span>
+                    <span class="accent" data-i18n="hero.title2">casa e impresa</span>
                 </h1>
                 <p class="lead" data-i18n="hero.lead">
-                    Installazione di sistemi di videosorveglianza, riparazione
-                    PC e sviluppo di siti web professionali. Servizio rapido,
-                    professionale e personalizzato.
+                    Tecnico IT per Lipari, Isole Eolie e Messina.
+                    Videosorveglianza, riparazione PC, assemblaggio custom,
+                    domotica, reti Wi-Fi e sviluppo siti web professionali.
                 </p>
                 <div class="hero-actions">
                     <a
@@ -324,24 +506,9 @@
                     >
                 </div>
                 <div class="hero-meta">
-                    <span
-                        >✓
-                        <span data-i18n="hero.meta1"
-                            >3 anni di esperienza</span
-                        ></span
-                    >
-                    <span
-                        >✓
-                        <span data-i18n="hero.meta2"
-                            >Isole Eolie · Messina · Italia</span
-                        ></span
-                    >
-                    <span
-                        >✓
-                        <span data-i18n="hero.meta3"
-                            >Preventivi gratuiti</span
-                        ></span
-                    >
+                    <span>✓ <span data-i18n="hero.meta1">3 anni di esperienza</span></span>
+                    <span>✓ <span data-i18n="hero.meta2">Lipari · Vulcano · Messina · Italia</span></span>
+                    <span>✓ <span data-i18n="hero.meta3">Preventivi gratuiti</span></span>
                 </div>
             </div>
         </section>
@@ -350,201 +517,260 @@
         <section id="services">
             <div class="container">
                 <div class="section-head">
-                    <span class="eyebrow" data-i18n="services.eyebrow"
-                        >Servizi</span
-                    >
-                    <h2 data-i18n="services.title">
-                        Tutto ciò che serve, in un unico tecnico
-                    </h2>
-                    <p data-i18n="services.subtitle">
-                        Dalla sicurezza della tua casa alla presenza online
-                        della tua attività.
-                    </p>
+                    <span class="eyebrow" data-i18n="services.eyebrow">Servizi</span>
+                    <h2 data-i18n="services.title">Tutto ciò che serve, in un unico tecnico</h2>
+                    <p data-i18n="services.subtitle">Dalla sicurezza della tua casa alla presenza online della tua attività, con interventi a Lipari, nelle Eolie e a Messina.</p>
                 </div>
 
                 <div class="services-grid">
+                    <!-- CCTV -->
                     <div class="service-card">
                         <div class="service-icon">
-                            <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                aria-hidden="true"
-                                focusable="false"
-                            >
-                                <path
-                                    d="M2 6h13l5 5v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6z"
-                                />
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                                <path d="M2 6h13l5 5v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6z" />
                                 <circle cx="9" cy="13" r="3" />
                             </svg>
                         </div>
-                        <h3 data-i18n="services.cctv.title">
-                            Videosorveglianza CCTV
-                        </h3>
+                        <h3 data-i18n="services.cctv.title">Videosorveglianza CCTV</h3>
                         <p data-i18n="services.cctv.desc">
-                            Progettazione, installazione e configurazione di
-                            sistemi di telecamere per casa, negozi e aziende.
-                            Lavoro solo con marchi di qualità: Reolink,
-                            Hikvision, EZVIZ e altri leader del settore.
+                            Progettazione, installazione e configurazione di sistemi di
+                            telecamere per casa, negozi e aziende. Scelgo soluzioni
+                            affidabili in base a budget, ambiente e necessità reali.
                         </p>
                         <ul>
-                            <li data-i18n="services.cctv.li1">
-                                Sopralluogo e consulenza gratuita
-                            </li>
-                            <li data-i18n="services.cctv.li2">
-                                Telecamere IP, WiFi e analogiche (4K, visione
-                                notturna)
-                            </li>
-                            <li data-i18n="services.cctv.li3">
-                                Accesso remoto da smartphone e notifiche in
-                                tempo reale
-                            </li>
-                            <li data-i18n="services.cctv.li4">
-                                NVR/DVR e archiviazione cloud o locale
-                            </li>
-                            <li data-i18n="services.cctv.li5">
-                                Manutenzione, aggiornamenti e assistenza
-                                post-installazione
-                            </li>
+                            <li data-i18n="services.cctv.li1">Sopralluogo e consulenza gratuita</li>
+                            <li data-i18n="services.cctv.li2">Telecamere IP, WiFi e analogiche (4K, visione notturna)</li>
+                            <li data-i18n="services.cctv.li3">Accesso remoto da smartphone e notifiche in tempo reale</li>
+                            <li data-i18n="services.cctv.li4">NVR/DVR e archiviazione cloud o locale</li>
+                            <li data-i18n="services.cctv.li5">Manutenzione, aggiornamenti e assistenza post-installazione</li>
                         </ul>
-                        <div class="brand-row">
-                            <span
-                                class="brand-label"
-                                data-i18n="services.cctv.brands"
-                                >Marchi che utilizzo:</span
-                            >
-                            <span class="brand-tag">Reolink</span>
-                            <span class="brand-tag">Hikvision</span>
-                            <span class="brand-tag">EZVIZ</span>
-                            <span class="brand-tag">Dahua</span>
-                            <span class="brand-tag">TP-Link</span>
-                        </div>
                     </div>
 
+                    <!-- PC Repair -->
                     <div class="service-card">
                         <div class="service-icon">
-                            <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                aria-hidden="true"
-                                focusable="false"
-                            >
-                                <rect
-                                    x="2"
-                                    y="4"
-                                    width="20"
-                                    height="13"
-                                    rx="2"
-                                />
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                                <rect x="2" y="4" width="20" height="13" rx="2" />
                                 <path d="M8 21h8M12 17v4" />
                             </svg>
                         </div>
                         <h3 data-i18n="services.pc.title">Riparazione PC</h3>
                         <p data-i18n="services.pc.desc">
-                            Diagnostica completa, riparazione hardware e
-                            software, upgrade prestazionali, pulizia e recupero
-                            dati per computer fissi, portatili, all-in-one e
-                            Mac.
+                            Diagnostica completa, riparazione hardware e software, upgrade
+                            prestazionali, pulizia e recupero dati per ogni tipo di computer.
                         </p>
                         <ul>
-                            <li data-i18n="services.pc.li1">
-                                Diagnosi gratuita e preventivo prima
-                                dell'intervento
-                            </li>
-                            <li data-i18n="services.pc.li2">
-                                Rimozione virus, malware e ottimizzazione del
-                                sistema
-                            </li>
-                            <li data-i18n="services.pc.li3">
-                                Sostituzione SSD, RAM, batterie, ventole e
-                                schermi
-                            </li>
-                            <li data-i18n="services.pc.li4">
-                                Installazione e configurazione di Windows, macOS
-                                e Linux
-                            </li>
-                            <li data-i18n="services.pc.li5">
-                                Pulizia interna, sostituzione pasta termica,
-                                riparazione surriscaldamento
-                            </li>
-                            <li data-i18n="services.pc.li6">
-                                Backup, recupero dati e migrazione tra
-                                dispositivi
-                            </li>
-                            <li data-i18n="services.pc.li7">
-                                Configurazione rete, stampanti e periferiche
-                            </li>
+                            <li data-i18n="services.pc.li1">Diagnosi gratuita e preventivo prima dell'intervento</li>
+                            <li data-i18n="services.pc.li2">Rimozione virus, malware e ottimizzazione del sistema</li>
+                            <li data-i18n="services.pc.li3">Sostituzione SSD, RAM, batterie, ventole e schermi</li>
+                            <li data-i18n="services.pc.li4">Installazione e configurazione di Windows, macOS e Linux</li>
+                            <li data-i18n="services.pc.li5">Backup, recupero dati, stampanti e periferiche</li>
                         </ul>
                     </div>
 
+                    <!-- Custom PC -->
                     <div class="service-card">
                         <div class="service-icon">
-                            <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                aria-hidden="true"
-                                focusable="false"
-                            >
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                                <rect x="4" y="3" width="16" height="18" rx="2" />
+                                <path d="M8 7h8M8 17h8M8 11h2M14 11h2" />
+                                <circle cx="10" cy="14" r="1" fill="currentColor" stroke="none" />
+                                <circle cx="14" cy="14" r="1" fill="currentColor" stroke="none" />
+                            </svg>
+                        </div>
+                        <h3 data-i18n="services.customPc.title">Assemblaggio PC Custom e Gaming</h3>
+                        <p data-i18n="services.customPc.desc">
+                            PC desktop su misura per gaming, lavoro, studio e creazione
+                            contenuti: scelgo componenti equilibrati, compatibili e pensati
+                            per durare.
+                        </p>
+                        <ul>
+                            <li data-i18n="services.customPc.li1">Scelta componenti in base a budget e obiettivo</li>
+                            <li data-i18n="services.customPc.li2">Assemblaggio pulito, cable management e test stabilità</li>
+                            <li data-i18n="services.customPc.li3">Installazione sistema operativo, driver e software essenziali</li>
+                            <li data-i18n="services.customPc.li4">Upgrade GPU, CPU, RAM, SSD e alimentatore</li>
+                            <li data-i18n="services.customPc.li5">Ottimizzazione temperature, airflow e prestazioni gaming</li>
+                        </ul>
+                    </div>
+
+                    <!-- Smart Home -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                                <path d="M3 11.5 12 4l9 7.5" />
+                                <path d="M5 10v10h14V10" />
+                                <path d="M9 20v-5h6v5" />
+                                <path d="M8.5 8.5a5 5 0 0 1 7 0" />
+                                <path d="M10.5 10.5a2 2 0 0 1 3 0" />
+                            </svg>
+                        </div>
+                        <h3 data-i18n="services.smartHome.title">Domotica e Smart Home</h3>
+                        <p data-i18n="services.smartHome.desc">
+                            Configurazione di dispositivi smart, automazioni e controllo da
+                            smartphone per rendere casa, B&amp;B o ufficio più comodi e sicuri.
+                        </p>
+                        <ul>
+                            <li data-i18n="services.smartHome.li1">Luci, prese, sensori, videocitofoni e termostati smart</li>
+                            <li data-i18n="services.smartHome.li2">Automazioni per sicurezza, comfort e risparmio energetico</li>
+                            <li data-i18n="services.smartHome.li3">Assistenti vocali, app e controllo remoto</li>
+                            <li data-i18n="services.smartHome.li4">Integrazione con Wi-Fi, telecamere e reti esistenti</li>
+                            <li data-i18n="services.smartHome.li5">Supporto per case vacanza, B&amp;B e abitazioni private</li>
+                        </ul>
+                    </div>
+
+                    <!-- Networking -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                                <rect x="2" y="15" width="20" height="5" rx="2" />
+                                <line x1="12" y1="15" x2="12" y2="12" />
+                                <path d="M7.5 10a6 6 0 0 1 9 0" />
+                                <path d="M4.5 7a11 11 0 0 1 15 0" />
+                                <circle cx="12" cy="11.5" r="1" fill="currentColor" stroke="none" />
+                            </svg>
+                        </div>
+                        <h3 data-i18n="services.net.title">Reti Wi-Fi e Networking</h3>
+                        <p data-i18n="services.net.desc">
+                            Setup, ottimizzazione e risoluzione problemi di reti domestiche
+                            e aziendali. Router, switch, access point e cablaggio strutturato
+                            per case, negozi e uffici.
+                        </p>
+                        <ul>
+                            <li data-i18n="services.net.li1">Installazione e configurazione router, switch e access point</li>
+                            <li data-i18n="services.net.li2">Estensione copertura Wi-Fi (mesh, repeater, powerline)</li>
+                            <li data-i18n="services.net.li3">Cablaggio strutturato (CAT5e/CAT6) per uffici e abitazioni</li>
+                            <li data-i18n="services.net.li4">Diagnosi e risoluzione problemi di connettività</li>
+                            <li data-i18n="services.net.li5">Reti ospiti, VPN, NAS e sicurezza domestica</li>
+                        </ul>
+                    </div>
+
+                    <!-- Web Development -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
                                 <polyline points="16 18 22 12 16 6" />
                                 <polyline points="8 6 2 12 8 18" />
                             </svg>
                         </div>
-                        <h3 data-i18n="services.web.title">
-                            Sviluppo siti web
-                        </h3>
+                        <h3 data-i18n="services.web.title">Sviluppo siti web</h3>
                         <p data-i18n="services.web.desc">
-                            Siti vetrina, landing page, e-commerce e portali
-                            aziendali su misura. Sviluppo moderno mobile-first,
-                            ottimizzato per Google e per la velocità di
-                            caricamento.
+                            Siti vetrina, landing page, e-commerce e portali aziendali su
+                            misura. Sviluppo moderno mobile-first, ottimizzato per Google e
+                            per la velocità di caricamento.
                         </p>
                         <ul>
-                            <li data-i18n="services.web.li1">
-                                Design moderno, responsive e mobile-first
-                            </li>
-                            <li data-i18n="services.web.li2">
-                                Sviluppo custom (HTML/CSS/JS) oppure WordPress
-                            </li>
-                            <li data-i18n="services.web.li3">
-                                Ottimizzazione SEO e Core Web Vitals (velocità,
-                                accessibilità)
-                            </li>
-                            <li data-i18n="services.web.li4">
-                                E-commerce con WooCommerce o soluzioni
-                                personalizzate
-                            </li>
-                            <li data-i18n="services.web.li5">
-                                Configurazione dominio, hosting ed email
-                                professionali
-                            </li>
-                            <li data-i18n="services.web.li6">
-                                Siti multilingua (italiano, inglese, francese,
-                                ecc.)
-                            </li>
-                            <li data-i18n="services.web.li7">
-                                Restyling e modernizzazione di siti esistenti
-                            </li>
-                            <li data-i18n="services.web.li8">
-                                Manutenzione, aggiornamenti e backup periodici
-                            </li>
+                            <li data-i18n="services.web.li1">Design moderno, responsive e mobile-first</li>
+                            <li data-i18n="services.web.li2">Sviluppo custom (HTML/CSS/JS) oppure WordPress</li>
+                            <li data-i18n="services.web.li3">Ottimizzazione SEO e Core Web Vitals (velocità, accessibilità)</li>
+                            <li data-i18n="services.web.li4">E-commerce con WooCommerce o soluzioni personalizzate</li>
+                            <li data-i18n="services.web.li5">Dominio, hosting, email, manutenzione e backup</li>
                         </ul>
-                        <div class="brand-row">
-                            <span
-                                class="brand-label"
-                                data-i18n="services.web.tech"
-                                >Tecnologie:</span
-                            >
-                            <span class="brand-tag">HTML5</span>
-                            <span class="brand-tag">CSS3</span>
-                            <span class="brand-tag">JavaScript</span>
-                            <span class="brand-tag">WordPress</span>
-                            <span class="brand-tag">WooCommerce</span>
-                            <span class="brand-tag">SEO</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section id="process" class="process">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow" data-i18n="process.eyebrow">Come lavoro</span>
+                    <h2 data-i18n="process.title">Semplice, trasparente, senza sorprese</h2>
+                    <p data-i18n="process.subtitle">Tre passi per risolvere il tuo problema o avviare il tuo progetto.</p>
+                </div>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3 data-i18n="process.step1.title">Contattami</h3>
+                        <p data-i18n="process.step1.desc">Descrivimi brevemente cosa ti serve — via WhatsApp, email o dal modulo qui sotto. Rispondo entro 24 ore.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3 data-i18n="process.step2.title">Sopralluogo e preventivo</h3>
+                        <p data-i18n="process.step2.desc">Valutiamo insieme la situazione (di persona o da remoto) e ti preparo un preventivo dettagliato, gratuito e senza impegno.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3 data-i18n="process.step3.title">Intervento e assistenza</h3>
+                        <p data-i18n="process.step3.desc">Eseguo il lavoro concordato con cura, ti aggiorno in tempo reale e rimango disponibile anche dopo la consegna.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow" data-i18n="faq.eyebrow">FAQ</span>
+                    <h2 data-i18n="faq.title">Domande frequenti</h2>
+                    <p data-i18n="faq.subtitle">Tutto quello che vuoi sapere prima di contattarmi.</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-summary" aria-expanded="false" aria-controls="faq-body-1">
+                            <span data-i18n="faq.q1">Quanto costa un impianto di videosorveglianza?</span>
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq-body" id="faq-body-1" aria-hidden="true">
+                            <div class="faq-body-inner">
+                                <p data-i18n="faq.a1">Il costo dipende dal numero di telecamere, dal tipo di installazione e dalle funzioni richieste. Offro un sopralluogo gratuito e un preventivo personalizzato senza impegno prima di iniziare.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-summary" aria-expanded="false" aria-controls="faq-body-2">
+                            <span data-i18n="faq.q2">Fate riparazione PC a domicilio nelle Isole Eolie?</span>
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq-body" id="faq-body-2" aria-hidden="true">
+                            <div class="faq-body-inner">
+                                <p data-i18n="faq.a2">Sì, effettuo interventi a domicilio a Lipari, Vulcano e Messina. Per casi di urgenza sono disponibile anche nei weekend.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-summary" aria-expanded="false" aria-controls="faq-body-3">
+                            <span data-i18n="faq.q3">Quanto costa un sito web professionale?</span>
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq-body" id="faq-body-3" aria-hidden="true">
+                            <div class="faq-body-inner">
+                                <p data-i18n="faq.a3">Il prezzo dipende da obiettivi, numero di pagine, contenuti, lingue e funzionalità richieste. Ti preparo sempre un preventivo chiaro e gratuito prima di iniziare.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-summary" aria-expanded="false" aria-controls="faq-body-4">
+                            <span data-i18n="faq.q4">Offrite configurazione Wi-Fi e reti per case vacanza e B&amp;B?</span>
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq-body" id="faq-body-4" aria-hidden="true">
+                            <div class="faq-body-inner">
+                                <p data-i18n="faq.a4">Assolutamente sì. È una delle richieste più frequenti nelle Isole Eolie, dove molte strutture ricettive hanno bisogno di copertura Wi-Fi affidabile. Gestisco installazione, configurazione rete ospiti, sicurezza e assistenza da remoto.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-summary" aria-expanded="false" aria-controls="faq-body-5">
+                            <span data-i18n="faq.q5">Lavorate anche a distanza per lo sviluppo web?</span>
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq-body" id="faq-body-5" aria-hidden="true">
+                            <div class="faq-body-inner">
+                                <p data-i18n="faq.a5">Sì, tutti i progetti web vengono gestiti completamente da remoto. Clienti da tutta Italia possono commissionare un sito senza doversi spostare.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-summary" aria-expanded="false" aria-controls="faq-body-6">
+                            <span data-i18n="faq.q6">Offrite assistenza per clienti stranieri nelle Isole Eolie?</span>
+                            <span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq-body" id="faq-body-6" aria-hidden="true">
+                            <div class="faq-body-inner">
+                                <p data-i18n="faq.a6">Assolutamente sì. Parlo italiano, inglese e francese e lavoro con clienti di ogni nazionalità. Le Isole Eolie attraggono turisti e residenti stranieri e offro assistenza tecnica completa in tutte e tre le lingue.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -556,86 +782,52 @@
             <div class="container">
                 <div class="about-grid">
                     <div class="about-text">
-                        <span class="eyebrow" data-i18n="about.eyebrow"
-                            >Chi sono</span
-                        >
-                        <h2 data-i18n="about.title">
-                            Un tecnico di fiducia, vicino a te
-                        </h2>
+                        <span class="eyebrow" data-i18n="about.eyebrow">Chi sono</span>
+                        <h2 data-i18n="about.title">Un tecnico di fiducia, vicino a te</h2>
                         <p data-i18n="about.p1">
-                            Sono Francesco, tecnico IT con 3 anni di esperienza.
-                            Mi occupo di sistemi di videosorveglianza,
-                            riparazione computer e sviluppo siti web.
+                            Sono Francesco, tecnico IT con 3 anni di esperienza. Mi occupo
+                            di videosorveglianza CCTV, riparazione computer, assemblaggio PC,
+                            domotica, reti Wi-Fi e sviluppo siti web.
                         </p>
                         <p data-i18n="about.p2">
-                            Lavoro principalmente nelle Isole Eolie (Lipari e
-                            Vulcano) e a Messina per gli interventi tecnici,
-                            mentre per i siti web offro il servizio in tutta
-                            Italia. Il mio obiettivo è offrire soluzioni
-                            semplici, efficaci e accessibili a privati e piccole
-                            imprese.
+                            Lavoro principalmente nelle Isole Eolie (Lipari, Vulcano e
+                            dintorni) e a Messina per gli interventi tecnici, mentre per i
+                            siti web offro il servizio in tutta Italia. Il mio obiettivo è
+                            offrire soluzioni semplici, efficaci e accessibili a privati e
+                            piccole imprese.
                         </p>
                         <div class="stats">
                             <div class="stat-card">
                                 <span class="num">3</span>
-                                <span class="label" data-i18n="about.stat1"
-                                    >Anni di esperienza</span
-                                >
+                                <span class="label" data-i18n="about.stat1">Anni di esperienza</span>
                             </div>
                             <div class="stat-card">
-                                <span class="num">3</span>
-                                <span class="label" data-i18n="about.stat2"
-                                    >Aree di competenza</span
-                                >
+                                <span class="num">6</span>
+                                <span class="label" data-i18n="about.stat2">Aree di competenza</span>
                             </div>
                             <div class="stat-card">
                                 <span class="num">100%</span>
-                                <span class="label" data-i18n="about.stat3"
-                                    >Servizio personalizzato</span
-                                >
+                                <span class="label" data-i18n="about.stat3">Servizio personalizzato</span>
                             </div>
                             <div class="stat-card">
                                 <span class="num">24h</span>
-                                <span class="label" data-i18n="about.stat4"
-                                    >Risposta rapida</span
-                                >
+                                <span class="label" data-i18n="about.stat4">Risposta rapida</span>
                             </div>
                         </div>
                     </div>
                     <div>
                         <div class="about-why-card">
-                            <h3 data-i18n="about.why.title">
-                                Perché scegliermi
-                            </h3>
+                            <h3 data-i18n="about.why.title">Perché scegliermi</h3>
                             <ul>
-                                <li data-i18n="about.why.li1">
-                                    Preventivi chiari e gratuiti, senza sorprese
-                                </li>
-                                <li data-i18n="about.why.li2">
-                                    Interventi rapidi e puntuali
-                                </li>
-                                <li data-i18n="about.why.li3">
-                                    Soluzioni su misura, non pacchetti standard
-                                </li>
-                                <li data-i18n="about.why.li4">
-                                    Assistenza anche dopo il lavoro svolto
-                                </li>
-                                <li data-i18n="about.why.li5">
-                                    Comunicazione semplice, senza tecnicismi
-                                    inutili
-                                </li>
-                                <li data-i18n="about.why.li6">
-                                    Garanzia su tutti i lavori svolti
-                                </li>
-                                <li data-i18n="about.why.li7">
-                                    Riservatezza e rispetto della tua privacy
-                                </li>
-                                <li data-i18n="about.why.li8">
-                                    Servizio a domicilio, quando possibile
-                                </li>
-                                <li data-i18n="about.why.li9">
-                                    Disponibilità nei weekend e orari flessibili
-                                </li>
+                                <li data-i18n="about.why.li1">Preventivi chiari e gratuiti, senza sorprese</li>
+                                <li data-i18n="about.why.li2">Interventi rapidi e puntuali</li>
+                                <li data-i18n="about.why.li3">Soluzioni su misura, non pacchetti standard</li>
+                                <li data-i18n="about.why.li4">Assistenza anche dopo il lavoro svolto</li>
+                                <li data-i18n="about.why.li5">Comunicazione semplice, senza tecnicismi inutili</li>
+                                <li data-i18n="about.why.li6">Garanzia su tutti i lavori svolti</li>
+                                <li data-i18n="about.why.li7">Riservatezza e rispetto della tua privacy</li>
+                                <li data-i18n="about.why.li8">Servizio a domicilio, quando possibile</li>
+                                <li data-i18n="about.why.li9">Disponibilità nei weekend e orari flessibili</li>
                             </ul>
                         </div>
                     </div>
@@ -647,130 +839,89 @@
         <section id="contact">
             <div class="container">
                 <div class="section-head">
-                    <span class="eyebrow" data-i18n="contact.eyebrow"
-                        >Contatti</span
-                    >
+                    <span class="eyebrow" data-i18n="contact.eyebrow">Contatti</span>
                     <h2 data-i18n="contact.title">Parliamo del tuo progetto</h2>
                     <p data-i18n="contact.subtitle">
-                        Raccontami di cosa hai bisogno: ti rispondo entro 24 ore
-                        con un preventivo gratuito.
+                        Raccontami di cosa hai bisogno: ti rispondo entro 24 ore con un
+                        preventivo gratuito.
                     </p>
                 </div>
 
-                <div class="contact-wrapper">
-                    <div class="contact-info">
-                        <ul>
+                <div class="contact-hub">
+                    <div class="contact-wrapper">
+                        <div class="contact-info">
+                            <ul>
                             <li>
                                 <div class="icon">
-                                    <svg
-                                        viewBox="0 0 24 24"
-                                        fill="currentColor"
-                                        aria-hidden="true"
-                                        focusable="false"
-                                    >
-                                        <path
-                                            d="M17.6 6.3A7.85 7.85 0 0 0 12 4a7.94 7.94 0 0 0-6.8 12l-1 3.7 3.8-1A7.94 7.94 0 0 0 12 19.9a7.94 7.94 0 0 0 5.6-13.6Z"
-                                        />
+                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                        <path d="M17.6 6.3A7.85 7.85 0 0 0 12 4a7.94 7.94 0 0 0-6.8 12l-1 3.7 3.8-1A7.94 7.94 0 0 0 12 19.9a7.94 7.94 0 0 0 5.6-13.6Z" />
                                     </svg>
                                 </div>
                                 <div>
                                     <div class="label">WhatsApp</div>
                                     <div class="value">
-                                        <a
-                                            href="https://wa.me/393518579386"
-                                            data-role="whatsapp-link"
-                                            target="_blank"
-                                            rel="noopener"
-                                            >+39 351 857 9386</a
-                                        >
+                                        <a href="https://wa.me/393518579386" data-role="whatsapp-link" target="_blank" rel="noopener">+39 351 857 9386</a>
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="icon">
-                                    <svg
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        aria-hidden="true"
-                                        focusable="false"
-                                    >
-                                        <rect
-                                            x="3"
-                                            y="5"
-                                            width="18"
-                                            height="14"
-                                            rx="2"
-                                        />
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                                        <rect x="3" y="5" width="18" height="14" rx="2" />
                                         <polyline points="3 7 12 13 21 7" />
                                     </svg>
                                 </div>
                                 <div>
                                     <div class="label">Email</div>
                                     <div class="value">
-                                        <a href="mailto:info@eolietech.com"
-                                            >info@eolietech.com</a
-                                        >
+                                        <a href="mailto:info@eolietech.com">info@eolietech.com</a>
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="icon">
-                                    <svg
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        aria-hidden="true"
-                                        focusable="false"
-                                    >
-                                        <path
-                                            d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                        />
+                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                        <path d="M21.7 4.3 18.4 19c-.2.9-.9 1.1-1.6.7l-4.5-3.3-2.2 2.1c-.2.2-.4.4-.9.4l.3-4.7 8.6-7.8c.4-.3-.1-.5-.6-.2L6.9 13 2.4 11.6c-1-.3-1-1 0-1.4L20 3.4c.8-.3 1.5.2 1.7.9Z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="label">Telegram</div>
+                                    <div class="value">
+                                        <a href="https://t.me/candygoogy" target="_blank" rel="noopener">@candygoogy</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon fiverr-icon" aria-hidden="true">fi</div>
+                                <div>
+                                    <div class="label">Fiverr</div>
+                                    <div class="value">
+                                        <a href="https://www.fiverr.com/waretagarasu/" target="_blank" rel="noopener">waretagarasu</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                                         <circle cx="12" cy="10" r="3" />
                                     </svg>
                                 </div>
                                 <div>
-                                    <div
-                                        class="label"
-                                        data-i18n="contact.area.label"
-                                    >
-                                        Zona di servizio
-                                    </div>
-                                    <div
-                                        class="value"
-                                        data-i18n="contact.area.value"
-                                    >
-                                        Isole Eolie e Messina (interventi) ·
-                                        Italia (web)
-                                    </div>
+                                    <div class="label" data-i18n="contact.area.label">Zona di servizio</div>
+                                    <div class="value" data-i18n="contact.area.value">Isole Eolie e Messina (interventi) · Italia (web)</div>
                                 </div>
                             </li>
                             <li>
                                 <div class="icon">
-                                    <svg
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        aria-hidden="true"
-                                        focusable="false"
-                                    >
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
                                         <circle cx="12" cy="12" r="10" />
                                         <line x1="2" y1="12" x2="22" y2="12" />
-                                        <path
-                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                                        />
+                                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                                     </svg>
                                 </div>
                                 <div>
-                                    <div
-                                        class="label"
-                                        data-i18n="contact.languages.label"
-                                    >
-                                        Lingue parlate
-                                    </div>
+                                    <div class="label" data-i18n="contact.languages.label">Lingue parlate</div>
                                     <div class="value">
                                         <span class="lang-pill">Italiano</span>
                                         <span class="lang-pill">English</span>
@@ -780,147 +931,162 @@
                             </li>
                             <li>
                                 <div class="icon">
-                                    <svg
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        aria-hidden="true"
-                                        focusable="false"
-                                    >
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
                                         <circle cx="12" cy="12" r="10" />
                                         <polyline points="12 6 12 12 16 14" />
                                     </svg>
                                 </div>
                                 <div>
-                                    <div
-                                        class="label"
-                                        data-i18n="contact.response.label"
-                                    >
-                                        Tempo di risposta
-                                    </div>
+                                    <div class="label" data-i18n="contact.response.label">Tempo di risposta</div>
                                     <div class="value">
-                                        <span
-                                            class="response-badge"
-                                            data-i18n="contact.response.value"
-                                            >Entro 24 ore</span
-                                        >
+                                        <span class="response-badge" data-i18n="contact.response.value">Entro 24 ore</span>
                                     </div>
                                 </div>
                             </li>
-                        </ul>
-                    </div>
+                            </ul>
+                            <div class="contact-note">
+                                <h4 data-i18n="contact.note.title">Per un preventivo più rapido</h4>
+                                <p data-i18n="contact.note.text">Scrivimi cosa ti serve, dove intervenire e quando sei disponibile. Più dettagli mi dai, più preciso sarà il preventivo.</p>
+                                <div class="contact-note-tags" aria-label="Informazioni utili" data-i18n-attr="aria-label:contact.note.aria">
+                                    <span data-i18n="contact.note.tag1">Problema</span>
+                                    <span data-i18n="contact.note.tag2">Luogo</span>
+                                    <span data-i18n="contact.note.tag3">Disponibilità</span>
+                                </div>
+                            </div>
+                        </div>
 
-                    <form class="contact-form" id="contactForm">
-                        <h3 data-i18n="contact.form.title">
-                            Richiedi un preventivo
-                        </h3>
-                        <p data-i18n="contact.form.subtitle">
-                            Compila il modulo: ti scriverò io.
-                        </p>
-                        <div class="form-row">
-                            <label for="name" data-i18n="contact.form.name"
-                                >Nome</label
-                            >
-                            <input
-                                id="name"
-                                name="name"
-                                type="text"
-                                autocomplete="name"
-                                autocapitalize="words"
-                                enterkeyhint="next"
-                                required
-                            />
+                        <form class="contact-form" id="contactForm" novalidate>
+                        <h3 data-i18n="contact.form.title">Richiedi un preventivo</h3>
+                        <p data-i18n="contact.form.subtitle">Compila il modulo: ti scriverò io.</p>
+                        <div class="form-grid">
+                            <div class="form-row">
+                                <label for="name" data-i18n="contact.form.name">Nome</label>
+                                <input
+                                    id="name"
+                                    name="name"
+                                    type="text"
+                                    data-i18n-attr="placeholder:contact.form.namePlaceholder"
+                                    autocomplete="name"
+                                    autocapitalize="words"
+                                    enterkeyhint="next"
+                                    required
+                                />
+                            </div>
+                            <div class="form-row">
+                                <label for="email" data-i18n="contact.form.email">Email</label>
+                                <input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    aria-describedby="contactMethodHint contactFormFeedback"
+                                    autocomplete="email"
+                                    inputmode="email"
+                                    enterkeyhint="next"
+                                />
+                            </div>
                         </div>
-                        <div class="form-row">
-                            <label
-                                for="service"
-                                data-i18n="contact.form.service"
-                                >Servizio</label
-                            >
+                        <div class="form-grid">
+                            <div class="form-row">
+                                <label for="phone" data-i18n="contact.form.phone">Telefono / WhatsApp</label>
+                                <input
+                                    id="phone"
+                                    name="phone"
+                                    type="tel"
+                                    data-i18n-attr="placeholder:contact.form.phonePlaceholder"
+                                    aria-describedby="contactMethodHint contactFormFeedback"
+                                    autocomplete="tel"
+                                    inputmode="tel"
+                                    enterkeyhint="next"
+                                />
+                            </div>
+                            <div class="form-row">
+                            <label for="service" data-i18n="contact.form.service">Servizio</label>
                             <select id="service" name="service" required>
-                                <option
-                                    value=""
-                                    data-i18n="contact.form.choose"
-                                >
-                                    — Seleziona —
-                                </option>
-                                <option
-                                    value="cctv"
-                                    data-i18n="services.cctv.title"
-                                >
-                                    Videosorveglianza CCTV
-                                </option>
-                                <option
-                                    value="pc"
-                                    data-i18n="services.pc.title"
-                                >
-                                    Riparazione PC
-                                </option>
-                                <option
-                                    value="web"
-                                    data-i18n="services.web.title"
-                                >
-                                    Sviluppo siti web
-                                </option>
-                                <option
-                                    value="other"
-                                    data-i18n="contact.form.other"
-                                >
-                                    Altro
-                                </option>
+                                <option value="" data-i18n="contact.form.choose">— Seleziona —</option>
+                                <option value="cctv" data-i18n="services.cctv.title">Videosorveglianza CCTV</option>
+                                <option value="pc" data-i18n="services.pc.title">Riparazione PC</option>
+                                <option value="custom-pc" data-i18n="services.customPc.title">Assemblaggio PC Custom e Gaming</option>
+                                <option value="smart-home" data-i18n="services.smartHome.title">Domotica e Smart Home</option>
+                                <option value="web" data-i18n="services.web.title">Sviluppo siti web</option>
+                                <option value="net" data-i18n="services.net.title">Reti Wi-Fi e Networking</option>
+                                <option value="other" data-i18n="contact.form.other">Altro</option>
                             </select>
+                            </div>
                         </div>
+                        <p
+                            id="contactMethodHint"
+                            class="form-hint"
+                            data-i18n="contact.form.contactHint"
+                        >Inserisci almeno email o telefono, così posso risponderti.</p>
                         <div class="form-row">
-                            <label
-                                for="message"
-                                data-i18n="contact.form.message"
-                                >Messaggio</label
-                            >
+                            <label for="message" data-i18n="contact.form.message">Messaggio</label>
                             <textarea
                                 id="message"
                                 name="message"
+                                data-i18n-attr="placeholder:contact.form.messagePlaceholder"
                                 autocapitalize="sentences"
                                 enterkeyhint="send"
                                 required
                             ></textarea>
                         </div>
-                        <button
-                            type="submit"
-                            class="btn btn-primary form-submit"
-                            data-i18n="contact.form.send"
-                        >
-                            Invia richiesta
-                        </button>
+                        <div class="form-row">
+                            <label for="availability" data-i18n="contact.form.availability">Quando sei disponibile? (opzionale)</label>
+                            <input
+                                id="availability"
+                                name="availability"
+                                type="text"
+                                data-i18n-attr="placeholder:contact.form.availabilityPlaceholder"
+                                autocomplete="off"
+                                autocapitalize="sentences"
+                                enterkeyhint="next"
+                            />
+                        </div>
+                        <div class="form-footer">
+                            <p
+                                class="form-gdpr"
+                                data-i18n-html="contact.form.privacy"
+                            >Inviando accetti la nostra <a href="/privacy">Informativa sulla Privacy</a>.</p>
+                            <button
+                                type="submit"
+                                class="btn btn-primary form-submit"
+                                data-i18n="contact.form.send"
+                                disabled
+                            >
+                                Invia richiesta
+                            </button>
+                        </div>
                         <p
                             id="contactFormFeedback"
                             class="form-feedback"
                             role="status"
                             aria-live="polite"
                         ></p>
-                    </form>
+                        </form>
+                    </div>
+
+                    <div class="service-area-panel">
+                        <div class="service-area-copy">
+                            <span class="eyebrow" data-i18n="contact.map.eyebrow">Zona operativa</span>
+                            <h3 data-i18n="contact.map.title">Zona di servizio</h3>
+                            <p data-i18n="contact.map.subtitle">
+                                Interventi tecnici nelle Isole Eolie (Lipari, Vulcano) e a Messina.
+                            </p>
+                        </div>
+                        <div class="service-area-map">
+                            <iframe
+                                src="https://maps.google.com/maps?ll=38.44,14.96&z=11&t=m&output=embed"
+                                width="100%"
+                                height="280"
+                                style="border: 0"
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Lipari and Vulcano service area map"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Service area map -->
-                <div class="map-wrapper">
-                    <div class="map-header">
-                        <h3 data-i18n="contact.map.title">Zona di servizio</h3>
-                        <p data-i18n="contact.map.subtitle">
-                            Interventi tecnici nelle Isole Eolie (Lipari,
-                            Vulcano) e a Messina.
-                        </p>
-                    </div>
-                    <iframe
-                        src="https://maps.google.com/maps?ll=38.44,14.96&z=11&t=m&output=embed"
-                        width="100%"
-                        height="340"
-                        style="border: 0"
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Lipari and Vulcano service area map"
-                        allowfullscreen
-                    ></iframe>
-                </div>
             </div>
         </section>
 
@@ -929,21 +1095,15 @@
                 <div>
                     © <span id="year"></span>
                     <span data-i18n="brand.name">Eolietech</span> —
-                    <span data-i18n="footer.tagline"
-                        >Servizi IT in Sicilia e in tutta Italia</span
-                    >
+                    <span data-i18n="footer.tagline">Servizi IT in Sicilia e in tutta Italia</span>
+                    · <a href="/privacy" data-i18n="footer.privacy">Informativa sulla Privacy</a>
                 </div>
                 <div class="footer-signature">
                     <span data-i18n="footer.built">Fatto con</span>
                     <span class="heart" aria-hidden="true">❤️</span>
                     <span data-i18n="footer.builtBy">da</span>
                     <strong class="signature">
-                        <a
-                            href="https://waretagarasu.com"
-                            target="_blank"
-                            rel="noopener"
-                            >WaretaGarasu</a
-                        >
+                        <a href="https://waretagarasu.com" target="_blank" rel="noopener">WaretaGarasu</a>
                     </strong>
                 </div>
             </div>
@@ -963,4 +1123,3 @@
         <script src="/source/script.min.js"></script>
     </body>
 </html>
-                                                                     

@@ -10,10 +10,11 @@
         <meta name="color-scheme" content="light dark" />
         <meta name="robots" content="noindex, follow" />
 
-        <title data-i18n="nf.metaTitle">Pagina non trovata — Eolietech</title>
+        <title data-i18n="privacy.metaTitle">Informativa sulla Privacy — Eolietech</title>
         <meta
             name="description"
-            content="La pagina richiesta non è stata trovata su eolietech.com."
+            data-i18n="privacy.metaDesc"
+            content="Informativa sul trattamento dei dati personali raccolti tramite il sito eolietech.com."
         />
 
         <!-- Self-hosted Inter (variable woff2, Latin subset) — preloaded for early fetch -->
@@ -108,30 +109,10 @@
                                 <line x1="12" y1="19.5" x2="12" y2="22.5"></line>
                                 <line x1="1.5" y1="12" x2="4.5" y2="12"></line>
                                 <line x1="19.5" y1="12" x2="22.5" y2="12"></line>
-                                <line
-                                    x1="4.22"
-                                    y1="4.22"
-                                    x2="6.34"
-                                    y2="6.34"
-                                ></line>
-                                <line
-                                    x1="17.66"
-                                    y1="17.66"
-                                    x2="19.78"
-                                    y2="19.78"
-                                ></line>
-                                <line
-                                    x1="4.22"
-                                    y1="19.78"
-                                    x2="6.34"
-                                    y2="17.66"
-                                ></line>
-                                <line
-                                    x1="17.66"
-                                    y1="6.34"
-                                    x2="19.78"
-                                    y2="4.22"
-                                ></line>
+                                <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"></line>
+                                <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"></line>
+                                <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"></line>
+                                <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"></line>
                             </svg>
                             <svg
                                 class="theme-icon moon"
@@ -139,9 +120,7 @@
                                 aria-hidden="true"
                                 focusable="false"
                             >
-                                <path
-                                    d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79z"
-                                ></path>
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79z"></path>
                             </svg>
                         </button>
                     </div>
@@ -158,45 +137,71 @@
             </div>
         </header>
 
-        <section class="notfound">
+        <main class="privacy-page">
             <div class="container">
-                <div class="code" aria-hidden="true">404</div>
-                <h1 data-i18n="nf.title">Pagina non trovata</h1>
-                <p class="lead" data-i18n="nf.lead">
-                    Spiacente, la pagina che stai cercando non esiste o è stata
-                    spostata.
-                </p>
-                <div class="hero-actions">
-                    <a
-                        href="/"
-                        class="btn btn-primary"
-                        data-i18n="nf.cta.home"
-                        >Torna alla home</a
-                    >
-                    <a
-                        href="https://wa.me/393518579386"
-                        class="btn btn-whatsapp"
-                        data-role="whatsapp-link"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        <svg
-                            width="18"
-                            height="18"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                            aria-hidden="true"
-                            focusable="false"
-                        >
-                            <path
-                                d="M17.6 6.3A7.85 7.85 0 0 0 12 4a7.94 7.94 0 0 0-6.8 12l-1 3.7 3.8-1A7.94 7.94 0 0 0 12 19.9a7.94 7.94 0 0 0 5.6-13.6Zm-5.6 12.2a6.6 6.6 0 0 1-3.4-.9l-.2-.1-2.2.6.6-2.2-.2-.2A6.62 6.62 0 1 1 12 18.5Zm3.6-4.9c-.2-.1-1.2-.6-1.4-.6-.2-.1-.3-.1-.5.1l-.7.8c-.1.2-.3.2-.5.1a5.4 5.4 0 0 1-2.7-2.4c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.6-1.4c-.1-.4-.3-.3-.4-.3h-.4a.7.7 0 0 0-.5.2 2.2 2.2 0 0 0-.7 1.6 3.8 3.8 0 0 0 .8 2 8.5 8.5 0 0 0 3.3 2.9c.5.2.8.3 1.1.4a2.6 2.6 0 0 0 1.2.1 2 2 0 0 0 1.3-.9 1.6 1.6 0 0 0 .1-.9c0-.1-.2-.2-.4-.2Z"
-                            />
-                        </svg>
-                        <span data-i18n="hero.cta1">Scrivimi su WhatsApp</span>
-                    </a>
+                <div class="privacy-header">
+                    <span class="eyebrow" data-i18n="privacy.eyebrow">Documenti legali</span>
+                    <h1 data-i18n="privacy.title">Informativa sulla Privacy</h1>
+                    <p class="privacy-date" data-i18n="privacy.lastUpdated">Ultimo aggiornamento: maggio 2026</p>
+                </div>
+
+                <div class="privacy-body">
+                    <section class="privacy-section">
+                        <h2 data-i18n="privacy.sec1.title">1. Titolare del trattamento</h2>
+                        <p data-i18n="privacy.sec1.text">Il titolare del trattamento dei dati è Francesco (WaretaGarasu), raggiungibile all'indirizzo email info@eolietech.com.</p>
+                    </section>
+
+                    <section class="privacy-section">
+                        <h2 data-i18n="privacy.sec2.title">2. Dati raccolti</h2>
+                        <p data-i18n="privacy.sec2.text">Tramite il modulo di contatto raccogliamo: nome, indirizzo email o numero di telefono/WhatsApp, servizio richiesto, messaggio ed eventuale disponibilità indicata. Nessun altro dato personale viene raccolto automaticamente dal sito.</p>
+                    </section>
+
+                    <section class="privacy-section">
+                        <h2 data-i18n="privacy.sec3.title">3. Finalità del trattamento</h2>
+                        <p data-i18n="privacy.sec3.text">I dati sono raccolti esclusivamente per rispondere alle richieste di preventivo e fornire assistenza tecnica.</p>
+                    </section>
+
+                    <section class="privacy-section">
+                        <h2 data-i18n="privacy.sec4.title">4. Base giuridica</h2>
+                        <p data-i18n="privacy.sec4.text">Il trattamento è basato sull'art. 6(1)(b) del GDPR (esecuzione di un contratto o misure precontrattuali su richiesta dell'interessato).</p>
+                    </section>
+
+                    <section class="privacy-section">
+                        <h2 data-i18n="privacy.sec5.title">5. Destinatari dei dati</h2>
+                        <p data-i18n="privacy.sec5.text">I dati del modulo di contatto sono trasmessi a Web3Forms Inc. (USA), che agisce come responsabile del trattamento per l'inoltro delle email. Se scegli di inviare la richiesta tramite WhatsApp, il messaggio viene aperto su WhatsApp con i dati inseriti nel modulo. I dati non vengono venduti né ceduti a terzi per scopi commerciali.</p>
+                    </section>
+
+                    <section class="privacy-section">
+                        <h2 data-i18n="privacy.sec6.title">6. Conservazione dei dati</h2>
+                        <p data-i18n="privacy.sec6.text">I dati sono conservati per il tempo strettamente necessario a evadere la richiesta e, successivamente, per un massimo di 90 giorni prima di essere eliminati.</p>
+                    </section>
+
+                    <section class="privacy-section">
+                        <h2 data-i18n="privacy.sec7.title">7. Cookie e localStorage</h2>
+                        <p data-i18n="privacy.sec7.text">Questo sito non utilizza cookie di tracciamento né cookie di terze parti. Le preferenze di tema (chiaro/scuro) e lingua sono salvate nel localStorage del browser — una tecnologia diversa dai cookie che non trasmette dati al server.</p>
+                    </section>
+
+                    <section class="privacy-section">
+                        <h2 data-i18n="privacy.sec8.title">8. Diritti dell'interessato</h2>
+                        <p data-i18n="privacy.sec8.text">Hai il diritto di accedere, rettificare, cancellare o limitare il trattamento dei tuoi dati, nonché il diritto alla portabilità e il diritto di opposizione (art. 15–21 GDPR). Per esercitare questi diritti, scrivi a info@eolietech.com.</p>
+                    </section>
+
+                    <section class="privacy-section">
+                        <h2 data-i18n="privacy.sec9.title">9. Servizi esterni</h2>
+                        <p data-i18n="privacy.sec9.text">La mappa nella pagina contatti è fornita da Google Maps e può caricare contenuti dai server di Google quando visualizzi quella sezione. I link a WhatsApp, Telegram, Fiverr e WaretaGarasu aprono servizi esterni con le rispettive informative privacy.</p>
+                    </section>
+
+                    <section class="privacy-section">
+                        <h2 data-i18n="privacy.sec10.title">10. Reclami</h2>
+                        <p data-i18n="privacy.sec10.text">Hai il diritto di presentare reclamo al Garante per la protezione dei dati personali: www.garanteprivacy.it.</p>
+                    </section>
+
+                    <div class="privacy-back">
+                        <a href="/" class="btn btn-secondary" data-i18n="privacy.back">← Torna alla home</a>
+                    </div>
                 </div>
             </div>
-        </section>
+        </main>
 
         <footer>
             <div class="container footer-content">
@@ -211,12 +216,7 @@
                     <span class="heart" aria-hidden="true">❤️</span>
                     <span data-i18n="footer.builtBy">da</span>
                     <strong class="signature">
-                        <a
-                            href="https://waretagarasu.com"
-                            target="_blank"
-                            rel="noopener"
-                            >WaretaGarasu</a
-                        >
+                        <a href="https://waretagarasu.com" target="_blank" rel="noopener">WaretaGarasu</a>
                     </strong>
                 </div>
             </div>

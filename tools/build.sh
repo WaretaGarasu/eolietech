@@ -32,6 +32,7 @@
 #   npm install -g terser html-minifier-terser   (or rely on npx --yes)
 # =============================================================================
 set -euo pipefail
+export PYTHONUTF8=1   # force UTF-8 stdout/stderr on Windows (safe no-op on Linux/macOS)
 
 # Always operate from the repo root, regardless of where the script was invoked.
 # Script lives at <repo>/tools/build.sh — cd up one level to reach the root.
@@ -59,6 +60,7 @@ done
 required=(
   source/index.html
   source/404.html
+  source/privacy.html
   source/style.css
   source/script.js
 )
@@ -135,6 +137,7 @@ build_html() {
 
 build_html source/index.html
 build_html source/404.html
+build_html source/privacy.html
 for f in source/projects/*.html; do
   [ -e "$f" ] || continue
   build_html "$f"
@@ -164,7 +167,8 @@ fi
 
 # -----------------------------------------------------------------------------
 # Sitemap  — regenerate from built HTML outputs.
-# Includes homepage + built project pages, excludes 404.
+# Includes homepage + built project pages. Excludes 404 and privacy because
+# privacy is intentionally noindex and should not be advertised in the sitemap.
 # -----------------------------------------------------------------------------
 echo "→ Regenerating sitemap.xml"
 SITE_BASE_URL="${SITE_BASE_URL:-https://eolietech.com}"
@@ -184,7 +188,7 @@ for path in targets:
     if not path.exists():
         continue
     rel = path.as_posix()
-    if rel == "404.html":
+    if rel in {"404.html", "privacy.html"}:
         continue
     loc = f"{base_url}/" if rel == "index.html" else f"{base_url}/{rel}"
     lastmod = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc).date().isoformat()
