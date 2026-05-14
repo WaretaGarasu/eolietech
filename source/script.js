@@ -191,15 +191,24 @@ const translations = {
     "privacy.sec5.text": "I dati del modulo di contatto sono trasmessi a Web3Forms Inc. (USA), che agisce come responsabile del trattamento per l'inoltro delle email. Se scegli di inviare la richiesta tramite WhatsApp, il messaggio viene aperto su WhatsApp con i dati inseriti nel modulo. I dati non vengono venduti né ceduti a terzi per scopi commerciali.",
     "privacy.sec6.title": "6. Conservazione dei dati",
     "privacy.sec6.text": "I dati sono conservati per il tempo strettamente necessario a evadere la richiesta e, successivamente, per un massimo di 90 giorni prima di essere eliminati.",
-    "privacy.sec7.title": "7. Cookie e localStorage",
-    "privacy.sec7.text": "Questo sito non utilizza cookie di tracciamento né cookie di terze parti. Le preferenze di tema (chiaro/scuro) e lingua sono salvate nel localStorage del browser — una tecnologia diversa dai cookie che non trasmette dati al server.",
+    "privacy.sec7.title": "7. Preferenze salvate sul dispositivo",
+    "privacy.sec7.text": "Le tue preferenze di tema (chiaro/scuro) e lingua vengono salvate direttamente sul tuo dispositivo, nel tuo browser. Questi dati non vengono mai inviati a noi né a terzi: rimangono sul tuo computer o telefono come memoria locale, funzionano in modo diverso dai cookie di tracciamento e non trasmettono nulla al server.",
     "privacy.sec8.title": "8. Diritti dell'interessato",
     "privacy.sec8.text": "Hai il diritto di accedere, rettificare, cancellare o limitare il trattamento dei tuoi dati, nonché il diritto alla portabilità e il diritto di opposizione (artt. 15–21 GDPR). Per esercitare questi diritti, scrivi a info@eolietech.com.",
     "privacy.sec9.title": "9. Servizi esterni",
-    "privacy.sec9.text": "La mappa nella pagina contatti è fornita da Google Maps e può caricare contenuti dai server di Google quando visualizzi quella sezione. I link a WhatsApp, Telegram, Fiverr e WaretaGarasu aprono servizi esterni con le rispettive informative privacy.",
+    "privacy.sec9.text": "La mappa nella pagina contatti è fornita da Google Maps e viene caricata solo se accetti dall'avviso in basso alla pagina. Se rifiuti, potrai comunque caricarla manualmente in qualsiasi momento. I link a WhatsApp, Telegram, Fiverr e WaretaGarasu aprono servizi esterni con le rispettive informative privacy.",
     "privacy.sec10.title": "10. Reclami",
     "privacy.sec10.text": "Hai il diritto di presentare reclamo al Garante per la protezione dei dati personali: www.garanteprivacy.it.",
-    "privacy.back": "← Torna alla home"
+    "privacy.back": "← Torna alla home",
+    "privacy.tldr.eyebrow": "In breve",
+    "privacy.tldr.text": "Non vendiamo i tuoi dati. Usiamo solo quello che ci invii nel modulo di contatto, per risponderti. La mappa Google Maps si carica solo se accetti. Le preferenze di tema e lingua rimangono sul tuo dispositivo e non vengono mai inviate a noi.",
+    "cookie.msg": "Salviamo le preferenze di tema e lingua sul tuo dispositivo. Google Maps si carica solo se accetti. <a href=\"/privacy\">Leggi la privacy policy</a>.",
+    "cookie.accept": "Accetta",
+    "cookie.decline": "Rifiuta",
+    "cookie.aria": "Avviso sui cookie",
+    "cookie.mapPlaceholder": "Abilita Google Maps per vedere la zona di servizio.",
+    "cookie.mapLoad": "Mostra mappa",
+    "contact.map.iframeTitle": "Mappa della zona di servizio — Lipari e Vulcano"
   },
   en: {
     "brand.name": "Eolietech",
@@ -376,15 +385,24 @@ const translations = {
     "privacy.sec5.text": "Contact form data is transmitted to Web3Forms Inc. (USA), acting as data processor for email forwarding. If you choose to send the request through WhatsApp, the message opens in WhatsApp with the data entered in the form. Data is not sold or shared with third parties for commercial purposes.",
     "privacy.sec6.title": "6. Data Retention",
     "privacy.sec6.text": "Data is retained for the time strictly necessary to fulfil the request and, thereafter, for a maximum of 90 days before deletion.",
-    "privacy.sec7.title": "7. Cookies and localStorage",
-    "privacy.sec7.text": "This website does not use tracking cookies or third-party cookies. Theme (light/dark) and language preferences are saved in the browser's localStorage — a technology different from cookies that does not transmit data to the server.",
+    "privacy.sec7.title": "7. Preferences saved on your device",
+    "privacy.sec7.text": "Your theme (light/dark) and language preferences are saved directly on your device, in your browser. This data is never sent to us or any third party: it stays on your computer or phone as local browser memory, works differently from tracking cookies, and transmits nothing to the server.",
     "privacy.sec8.title": "8. Your Rights",
     "privacy.sec8.text": "You have the right to access, rectify, erase or restrict processing of your data, as well as the right to data portability and the right to object (Arts. 15–21 GDPR). To exercise these rights, write to info@eolietech.com.",
     "privacy.sec9.title": "9. External Services",
-    "privacy.sec9.text": "The map in the contact section is provided by Google Maps and may load content from Google's servers when you view that section. Links to WhatsApp, Telegram, Fiverr and WaretaGarasu open external services with their own privacy policies.",
+    "privacy.sec9.text": "The map in the contact section is provided by Google Maps and only loads if you accept from the notice at the bottom of the page. If you decline, you can still load the map manually at any time. Links to WhatsApp, Telegram, Fiverr and WaretaGarasu open external services with their own privacy policies.",
     "privacy.sec10.title": "10. Complaints",
     "privacy.sec10.text": "You have the right to lodge a complaint with the Italian data protection authority: www.garanteprivacy.it.",
-    "privacy.back": "← Back to home"
+    "privacy.back": "← Back to home",
+    "privacy.tldr.eyebrow": "In short",
+    "privacy.tldr.text": "We don't sell your data. We only use what you send us in the contact form, to reply to you. Google Maps only loads if you accept. Theme and language preferences stay on your device and are never sent to us.",
+    "cookie.msg": "We save your theme and language preferences on your device. Google Maps only loads if you accept. <a href=\"/privacy\">Read our privacy policy</a>.",
+    "cookie.accept": "Accept",
+    "cookie.decline": "Decline",
+    "cookie.aria": "Cookie notice",
+    "cookie.mapPlaceholder": "Enable Google Maps to see the service area.",
+    "cookie.mapLoad": "Show map",
+    "contact.map.iframeTitle": "Lipari and Vulcano service area map"
   }
 };
 
@@ -622,6 +640,9 @@ async function sendForm(e) {
   // Open WhatsApp immediately — don't block on network request
   window.open(waUrl, '_blank');
 
+  // Clear status feedback after a few seconds
+  if (feedbackEl) setTimeout(() => { feedbackEl.textContent = ''; }, 4500);
+
   // Email trail via Web3Forms — silent fail if network unavailable
   try {
     await fetch('https://api.web3forms.com/submit', {
@@ -645,6 +666,69 @@ async function sendForm(e) {
     setTimeout(() => { updateContactSubmitState(form); }, 600);
   }
   return false;
+}
+
+/* ---------- Cookie consent ---------- */
+function getConsent() {
+  try {
+    const val = localStorage.getItem('cookieConsent');
+    return val === '1' ? 'accepted' : val; // migrate legacy value
+  } catch (e) { return null; }
+}
+function setConsent(val) {
+  try { localStorage.setItem('cookieConsent', val); } catch (e) {}
+}
+function loadMap() {
+  const iframe = document.getElementById('mapIframe');
+  const placeholder = document.getElementById('mapPlaceholder');
+  if (iframe && !iframe.src) iframe.src = iframe.getAttribute('data-src') || '';
+  if (iframe) iframe.style.display = '';
+  if (placeholder) placeholder.style.display = 'none';
+}
+function showMapPlaceholder() {
+  const iframe = document.getElementById('mapIframe');
+  const placeholder = document.getElementById('mapPlaceholder');
+  if (iframe) iframe.style.display = 'none';
+  if (placeholder) placeholder.style.display = '';
+}
+function dismissBanner(banner) {
+  if (banner) banner.classList.remove('visible');
+  document.body.classList.remove('cookie-banner-open');
+}
+function initCookieBanner() {
+  const banner = document.getElementById('cookieBanner');
+  const acceptBtn = document.getElementById('cookieAccept');
+  const declineBtn = document.getElementById('cookieDecline');
+  const mapLoadBtn = document.getElementById('mapLoadBtn');
+  const consent = getConsent();
+  if (consent === 'accepted') {
+    loadMap();
+  } else {
+    showMapPlaceholder();
+    if (banner && consent === null) {
+      banner.classList.add('visible');
+      document.body.classList.add('cookie-banner-open');
+    }
+  }
+  if (acceptBtn) {
+    acceptBtn.addEventListener('click', () => {
+      setConsent('accepted');
+      dismissBanner(banner);
+      loadMap();
+    });
+  }
+  if (declineBtn) {
+    declineBtn.addEventListener('click', () => {
+      setConsent('declined');
+      dismissBanner(banner);
+    });
+  }
+  if (mapLoadBtn) {
+    mapLoadBtn.addEventListener('click', () => {
+      setConsent('accepted');
+      loadMap();
+    });
+  }
 }
 
 /* ---------- Init on page ready ---------- */
@@ -702,13 +786,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeMenu = () => {
       navLinks.classList.remove('open');
       menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.textContent = '☰';
       document.body.classList.remove('menu-open');
     };
     const openMenu = () => {
       navLinks.classList.add('open');
       menuToggle.setAttribute('aria-expanded', 'true');
-      menuToggle.textContent = '✕';
       document.body.classList.add('menu-open');
     };
     menuToggle.addEventListener('click', () => {
@@ -773,6 +855,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // FAQ animated accordion
   initFaqAccordion();
+
+  // Cookie consent + Google Maps gating
+  initCookieBanner();
 });
 
 function initFaqAccordion() {

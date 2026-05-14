@@ -126,8 +126,8 @@
                     </div>
                     <div class="nav-controls">
                         <div class="lang-toggle" role="group" aria-label="Language">
-                            <button data-lang="it" class="active">IT</button>
-                            <button data-lang="en">EN</button>
+                            <button data-lang="it" class="active" aria-label="Italiano">IT</button>
+                            <button data-lang="en" aria-label="English">EN</button>
                         </div>
                         <button
                             id="themeToggle"
@@ -193,7 +193,11 @@
                     aria-expanded="false"
                     aria-controls="navLinks"
                 >
-                    ☰
+                    <span class="menu-icon" aria-hidden="true">
+                        <span class="bar bar-1"></span>
+                        <span class="bar bar-2"></span>
+                        <span class="bar bar-3"></span>
+                    </span>
                 </button>
             </div>
         </header>
@@ -273,6 +277,17 @@
                 <polyline points="6 14 12 8 18 14" />
             </svg>
         </button>
+        <div id="cookieBanner" class="cookie-banner" role="region" aria-label="Avviso sui cookie" data-i18n-aria="cookie.aria">
+            <div class="container cookie-banner-inner">
+                <p class="cookie-banner-text" data-i18n-html="cookie.msg">
+                    Salviamo le preferenze di tema e lingua sul tuo dispositivo. Google Maps si carica solo se accetti. <a href="/privacy">Leggi la privacy policy</a>.
+                </p>
+                <div class="cookie-banner-actions">
+                    <button id="cookieDecline" class="btn btn-secondary cookie-decline-btn" type="button" data-i18n="cookie.decline">Rifiuta</button>
+                    <button id="cookieAccept" class="btn btn-primary cookie-accept-btn" type="button" data-i18n="cookie.accept">Accetta</button>
+                </div>
+            </div>
+        </div>
         <script src="/source/script.min.js"></script>
     </body>
 </html>
